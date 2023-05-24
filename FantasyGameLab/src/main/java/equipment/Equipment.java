@@ -1,11 +1,11 @@
 package equipment;
 
 public enum Equipment {
-    SWORD(EquipmentType.STANDARD, -10),
-    CLUB(EquipmentType.STANDARD, -5),
-    AXE(EquipmentType.STANDARD, -15),
-    FIRESPELL(EquipmentType.MAGIC,-10),
-    LIGHTNINGSPELL(EquipmentType.MAGIC, -5),
+    SWORD(EquipmentType.STANDARD, 10),
+    CLUB(EquipmentType.STANDARD, 5),
+    AXE(EquipmentType.STANDARD, 15),
+    FIRESPELL(EquipmentType.MAGIC,10),
+    LIGHTNINGSPELL(EquipmentType.MAGIC, 5),
     HEALINGPOTION(EquipmentType.HEALING, 10),
     HEALINGBANDAGE(EquipmentType.HEALING, 5);
 

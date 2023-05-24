@@ -1,5 +1,6 @@
 package room;
 
+import behaviours.IFight;
 import characters.Monster;
 import characters.PlayableCharacter;
 
@@ -37,25 +38,34 @@ public class Room{
     }
 
     public String fight(PlayableCharacter player1, PlayableCharacter player2){
-        Boolean play1isGiver;
+        int giverOfDamage;
         PlayableCharacter winner;
-        while (player1.getHealth() > 0 && player2.getHealth() > 0){
-            if (play1isGiver){
-                fightRound(player1, player2);
-            } else {
-                fightRound(player2, player1);
+        if((player1 instanceof IFight) && (player2 instanceof IFight)) {
+            while (player1.getHealth() > 0 && player2.getHealth() > 0) {
+                giverOfDamage = (int) (Math.random() * 3); //choice of 1 or 2, so give 3
+                System.out.printf("Player1 health %d : player2 health %d \n",
+                        player1.getHealth(), player2.getHealth());
+                if (giverOfDamage == 1) {
+                    fightRound((IFight) player1, (IFight)player2);
+                } else {
+                    fightRound((IFight) player2, (IFight) player1);
+                }
             }
-        }
-        if (player1.getHealth() == 0) {
-            winner = player2;
+            if (player1.getHealth() == 0) {
+                winner = player2;
+            } else {
+                winner = player1;
+            }
+//            return "Character " + player1.getName() + " won!";
+            return "Character " + winner.getName() + " won!";
         } else {
-            winner = player1;
+            return "One of these Characters can't fight! Try again!";
         }
-        return "Character " + winner.getName() + " won!";
     }
 
-    private void fightRound(PlayableCharacter giver, PlayableCharacter taker){
+    private void fightRound(IFight giver, IFight taker){
         int damageToBeInflicted = giver.giveDamage();
+        System.out.println("Pain inflicted: " + damageToBeInflicted);
         taker.takeDamage(damageToBeInflicted);
     }
 
