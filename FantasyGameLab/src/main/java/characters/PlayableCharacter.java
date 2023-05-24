@@ -1,8 +1,10 @@
-public abstract class Character {
+package characters;
+
+public abstract class PlayableCharacter {
 
     private String name;
     private int health;
-    public Character(String name, int health){
+    public PlayableCharacter(String name, int health){
         this.name = name;
         this.health = health;
     }
