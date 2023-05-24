@@ -19,4 +19,6 @@ public class NonMagicTest {
         assertEquals("Arthur", nonMagicCharacter.getName());
         assertEquals(50, nonMagicCharacter.getHealth());
     }
+
+
 }
