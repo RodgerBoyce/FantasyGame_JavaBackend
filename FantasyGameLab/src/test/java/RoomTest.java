@@ -32,4 +32,6 @@ public class RoomTest {
         room.addCharacter(rodger);
         assertEquals(1, room.getCharacters().size());
     }
+
+
 }

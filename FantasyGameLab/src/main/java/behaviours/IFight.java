@@ -4,7 +4,7 @@ import characters.PlayableCharacter;
 
 public interface IFight {
 
-    String takeDamage();
-    String giveDamage();
+    void takeDamage(int damageValue);
+    int giveDamage();
 
 }

@@ -31,5 +31,9 @@ public class MagicCharTest {
         assertEquals(-5, magicCharacter.getEquipment().getHealthImpact());
         }
 
-
+    @Test
+    public void canBeDamaged(){
+        magicCharacter.takeDamage(10);
+        assertEquals(45, magicCharacter.getHealth());
+    }
     }

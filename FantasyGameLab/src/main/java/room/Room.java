@@ -35,4 +35,28 @@ public class Room{
     public ArrayList<PlayableCharacter> getCharacters() {
         return characters;
     }
+
+    public String fight(PlayableCharacter player1, PlayableCharacter player2){
+        Boolean play1isGiver;
+        PlayableCharacter winner;
+        while (player1.getHealth() > 0 && player2.getHealth() > 0){
+            if (play1isGiver){
+                fightRound(player1, player2);
+            } else {
+                fightRound(player2, player1);
+            }
+        }
+        if (player1.getHealth() == 0) {
+            winner = player2;
+        } else {
+            winner = player1;
+        }
+        return "Character " + winner.getName() + " won!";
+    }
+
+    private void fightRound(PlayableCharacter giver, PlayableCharacter taker){
+        int damageToBeInflicted = giver.giveDamage();
+        taker.takeDamage(damageToBeInflicted);
+    }
+
 }

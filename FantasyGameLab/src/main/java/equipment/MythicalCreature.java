@@ -6,7 +6,7 @@ public class MythicalCreature {
 
     private String name;
     private CreatureType creatureType;
-    int defenseValue;
+    private int defenseValue;
 
     public MythicalCreature(String name, CreatureType creatureType, int defenseValue){
         this.name = name;
@@ -16,5 +16,21 @@ public class MythicalCreature {
 
     public String getName() {
         return name;
+    }
+
+    public CreatureType getCreatureType() {
+        return creatureType;
+    }
+
+    public void setCreatureType(CreatureType creatureType) {
+        this.creatureType = creatureType;
+    }
+
+    public int getDefenseValue() {
+        return defenseValue;
+    }
+
+    public void setDefenseValue(int defenseValue) {
+        this.defenseValue = defenseValue;
     }
 }
