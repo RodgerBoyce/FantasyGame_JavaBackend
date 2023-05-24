@@ -26,9 +26,9 @@ public class MagicCharTest {
 
     @Test
     public void canSwapEquipment(){
-        assertEquals(-10, magicCharacter.getEquipment().getHealthImpact());
+        assertEquals(10, magicCharacter.getEquipment().getHealthImpact());
         magicCharacter.switchEquipment(Equipment.LIGHTNINGSPELL);
-        assertEquals(-5, magicCharacter.getEquipment().getHealthImpact());
+        assertEquals(5, magicCharacter.getEquipment().getHealthImpact());
         }
 
     @Test
