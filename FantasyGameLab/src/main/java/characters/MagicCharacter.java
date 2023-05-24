@@ -19,12 +19,21 @@ public class MagicCharacter extends PlayableCharacter implements IFight, Equipab
     public int getImpactScore(){
         return 0;
     }
-
     public String takeDamage(){
         return "Tis but a scratch!!";
     }
-
     public String giveDamage(){
         return "I'm going to batter lumps out you!!";
+    }
+
+    public MythicalCreature getMythicalCreature() {
+        return mythicalCreature;
+    }
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void switchEquipment(Equipment newEquipment){
+        this.equipment = newEquipment;
     }
 }

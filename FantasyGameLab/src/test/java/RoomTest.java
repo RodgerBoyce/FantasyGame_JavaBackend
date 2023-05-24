@@ -1,5 +1,6 @@
 import characters.Monster;
 import characters.NonMagicCharacter;
+import equipment.Equipment;
 import org.junit.Before;
 import org.junit.Test;
 import room.Room;
@@ -17,6 +18,7 @@ public class RoomTest {
     public void before(){
         room = new Room("Game Room 1");
         monster = new Monster("Gerisaurus", 50, 10);
+        rodger = new NonMagicCharacter("Rodger", 100, Equipment.SWORD);
     }
     @Test
     public void canAddMonster(){
@@ -25,4 +27,9 @@ public class RoomTest {
         assertEquals("Gerisaurus", tempMonster.getName());
     }
 
+    @Test
+    public void canAddGoodie(){
+        room.addCharacter(rodger);
+        assertEquals(1, room.getCharacters().size());
+    }
 }

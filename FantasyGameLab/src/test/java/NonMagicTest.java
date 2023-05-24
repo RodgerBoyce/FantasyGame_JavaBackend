@@ -13,7 +13,6 @@ public class NonMagicTest {
         nonMagicCharacter = new NonMagicCharacter("Arthur", 50, Equipment.SWORD);
 
     }
-
     @Test
     public void charHasNameAndHealth(){
         assertEquals("Arthur", nonMagicCharacter.getName());

@@ -23,4 +23,16 @@ public class Room{
     public Monster getMonster() {
         return monster;
     }
+
+    public void addCharacter(PlayableCharacter character){
+        this.characters.add(character);
+    }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public ArrayList<PlayableCharacter> getCharacters() {
+        return characters;
+    }
 }
