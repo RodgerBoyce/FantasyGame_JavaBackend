@@ -12,8 +12,8 @@ public class NonMagicCharacter extends PlayableCharacter implements Equipable {
         this.equipment = equipment;
     }
 
-    public void impactHealth(PlayableCharacter target){
-        System.out.println("Impacting health of " + target.getName());
+    public int getImpactScore(){
+        return 0;
     }
 
 }
