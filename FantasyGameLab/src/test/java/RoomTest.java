@@ -40,4 +40,12 @@ public class RoomTest {
         assertEquals(result, result);
     }
 
+    @Test
+    public void canAddTreasureToChest(){
+        room.fillTreasureChest();
+        int result = room.getTreasureChest().getPouchValue();
+        assertEquals(80, result);
+    }
+
+
 }

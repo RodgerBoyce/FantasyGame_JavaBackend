@@ -3,18 +3,22 @@ package room;
 import behaviours.IFight;
 import characters.Monster;
 import characters.PlayableCharacter;
+import equipment.TreasurePouch;
+import treasure.Treasure;
 
 import java.util.ArrayList;
 
 public class Room{
     private String roomName;
     private ArrayList<PlayableCharacter> characters;
+    private TreasurePouch treasureChest;
     private Monster monster;
     private Boolean completed;
 
     public Room(String name){
         this.roomName = name;
         this.characters = new ArrayList<>();
+        this.treasureChest = new TreasurePouch();
         this.monster = null;
         this.completed = false;
     }
@@ -74,4 +78,13 @@ public class Room{
         taker.takeDamage(damageToBeInflicted);
     }
 
+    public void fillTreasureChest(){
+        this.treasureChest.addTreasure(Treasure.RUBY, 5);
+        this.treasureChest.addTreasure(Treasure.GOLDCOIN, 5);
+        this.treasureChest.addTreasure(Treasure.DIAMONDS, 5);
+    }
+
+    public TreasurePouch getTreasureChest() {
+        return treasureChest;
+    }
 }
