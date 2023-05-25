@@ -20,11 +20,9 @@ public class Room{
     public void addMonster(Monster monster){
         this.monster = monster;
     }
-
     public Monster getMonster() {
         return monster;
     }
-
     public void addCharacter(PlayableCharacter character){
         this.characters.add(character);
     }

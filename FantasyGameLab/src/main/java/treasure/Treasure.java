@@ -1,9 +1,9 @@
 package treasure;
 
 public enum Treasure {
-    DIAMONDDS(10),
-    GOLDCOIN(5),
-    RUBY(1);
+    DIAMONDS(10),
+    GOLDCOIN(1),
+    RUBY(5);
 
     private final Integer value;
 

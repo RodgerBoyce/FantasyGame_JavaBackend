@@ -18,7 +18,7 @@ public class RoomTest {
     public void before(){
         room = new Room("Game Room 1");
         monster = new Monster("Gerisaurus", 50, 10);
-        rodger = new NonMagicCharacter("Rodger", 50, Equipment.SWORD);
+        rodger = new NonMagicCharacter("Rodger", 75, Equipment.SWORD);
     }
     @Test
     public void canAddMonster(){

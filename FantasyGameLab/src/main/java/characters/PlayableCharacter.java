@@ -4,7 +4,6 @@ import treasure.Treasure;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public abstract class PlayableCharacter {
 
@@ -38,14 +37,21 @@ public abstract class PlayableCharacter {
     public HashMap<Treasure, Integer> getTreasurePouch() {
         return treasurePouch;
     }
-    public int getTreasureAmount(Treasure treasure){
+    public int getTreasureCount(Treasure treasure){
         return this.treasurePouch.get(treasure);
     }
 
-//    public int getPouchValue(){
-//        int totalValue;
-//        for (Set<Map.Entry<Treasure, Integer>> : this.treasurePouch.entrySet()){
-//
-//        }
-//    }
+    public int getTreasureValue(Treasure treasure){
+        return treasure.getValue();
+    }
+
+    public int getPouchValue(){
+        int totalValue = 0;
+        for (Map.Entry<Treasure, Integer> entry : this.treasurePouch.entrySet()){
+            Treasure key = entry.getKey();
+            int count = getTreasureCount(key);
+            totalValue += count * getTreasureValue(key);
+        }
+        return totalValue;
+    }
 }
