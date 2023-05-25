@@ -10,11 +10,13 @@ public class Room{
     private String roomName;
     private ArrayList<PlayableCharacter> characters;
     private Monster monster;
+    private Boolean completed;
 
     public Room(String name){
         this.roomName = name;
         this.characters = new ArrayList<>();
         this.monster = null;
+        this.completed = false;
     }
 
     public void addMonster(Monster monster){
@@ -26,7 +28,12 @@ public class Room{
     public void addCharacter(PlayableCharacter character){
         this.characters.add(character);
     }
-
+    public Boolean getCompleted() {
+        return completed;
+    }
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
+    }
     public String getRoomName() {
         return roomName;
     }
@@ -49,10 +56,10 @@ public class Room{
                     fightRound((IFight) player2, (IFight) player1);
                 }
             }
-            if (player1.getHealth() == 0) {
-                winner = player2;
-            } else {
+            if (player1.getHealth() > 0) {
                 winner = player1;
+            } else {
+                winner = player2;
             }
 //            return "Character " + player1.getName() + " won!";
             return "Character " + winner.getName() + " won!";

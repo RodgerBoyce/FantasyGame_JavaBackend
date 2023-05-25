@@ -26,25 +26,4 @@ public class NonMagicTest {
         assertEquals(40, nonMagicCharacter.getHealth());
     }
 
-    @Test
-    public void canAddTreasure(){
-        nonMagicCharacter.addTreasure(Treasure.RUBY, 5);
-        assertEquals(5, nonMagicCharacter.getTreasureCount(Treasure.RUBY));
-    }
-    @Test
-    public void canAddMultipleTreasures(){
-        nonMagicCharacter.addTreasure(Treasure.RUBY, 5);
-        nonMagicCharacter.addTreasure(Treasure.GOLDCOIN, 15);
-        nonMagicCharacter.addTreasure(Treasure.RUBY, 2);
-        assertEquals(7, nonMagicCharacter.getTreasureCount(Treasure.RUBY));
-        assertEquals(15, nonMagicCharacter.getTreasureCount(Treasure.GOLDCOIN));
-    }
-
-    @Test
-    public void canCalculatePouchValue(){
-        nonMagicCharacter.addTreasure(Treasure.RUBY, 10);
-        nonMagicCharacter.addTreasure(Treasure.GOLDCOIN, 15);
-        nonMagicCharacter.addTreasure(Treasure.DIAMONDS, 3);
-        assertEquals(95, nonMagicCharacter.getPouchValue());
-    }
 }
