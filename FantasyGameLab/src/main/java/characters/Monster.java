@@ -15,6 +15,8 @@ public class Monster extends PlayableCharacter implements IFight {
         this.setHealth(this.getHealth() - damageAmount);
     }
 
+
+
     public int giveDamage(){
         return getDamageValue();
     }

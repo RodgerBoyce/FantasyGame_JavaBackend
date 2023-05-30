@@ -21,6 +21,10 @@ public class NonMagicCharacter extends PlayableCharacter implements Equipable, I
         this.setHealth(this.getHealth() - damageAmount);
     }
 
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
     public int giveDamage(){
         return this.equipment.getHealthImpact();
     }

@@ -42,6 +42,10 @@ public class Room{
         return characters;
     }
 
+    public PlayableCharacter getCharacterByID(int characterNumber){
+        return this.characters.get(characterNumber);
+    }
+
     public String fight(PlayableCharacter player1, PlayableCharacter player2){
         int giverOfDamage;
         PlayableCharacter winner;
